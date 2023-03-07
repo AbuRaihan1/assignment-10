@@ -9,8 +9,27 @@
   text-decoration: none;
   padding: 5px 10px;
   color: black;
+  font-weight: bold;
 }
 
 .nav-item .active-link {
   color: #ff5200;
+}
+
+@media screen and (max-width:500px){
+  .navbar {
+    padding:  10px !important;
+  }
+  .nav-logo {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width:377px){
+  .navbar {
+    padding:10px  5px !important;
+  }
+  .nav-logo {
+    font-size: 20px;
+  }
 }
