@@ -2,6 +2,7 @@
   background-color: #edeff0f6;
   display: flex;
   padding: 10px 40px !important;
+  box-shadow: 1px 4px 5px rgb(136, 135, 135);
 }
 
 .nav-item a {
@@ -10,6 +11,6 @@
   color: black;
 }
 
-.active-link {
+.nav-item .active-link {
   color: #ff5200;
 }
