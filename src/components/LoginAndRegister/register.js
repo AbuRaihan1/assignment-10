@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import registerImage from "../../assets/images/signUp.png";
 const register = () => {
   return (
     <div className="login">
@@ -33,7 +33,7 @@ const register = () => {
                     />
                     <input
                       type="password"
-                      placeholder="******"
+                      placeholder="password"
                       name="password"
                       required
                     />{" "}
@@ -50,7 +50,7 @@ const register = () => {
             </Col>
             <Col md="6">
               <div className="login-content-wrapper">
-                <img alt="" />
+                <img alt="" src={registerImage} />
               </div>
             </Col>
           </Row>

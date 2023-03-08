@@ -1,7 +1,8 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import './login.css'
+import loginImage from "../../assets/images/login.png";
+import "./login.css";
 const Login = () => {
   return (
     <div className="login">
@@ -43,7 +44,7 @@ const Login = () => {
             </Col>
             <Col md="6">
               <div className="login-content-wrapper">
-                <img alt="" />
+                <img alt="" src={loginImage} />
               </div>
             </Col>
           </Row>
