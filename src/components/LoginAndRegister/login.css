@@ -1,0 +1,143 @@
+.login {
+  padding: 80px 0;
+  padding-top: 120px;
+  background: #ff51008e;
+  background-attachment: fixed;
+}
+.login-content {
+  background: white;
+  width: 94%;
+  margin-left: 3%;
+  border-radius: 10px;
+}
+.login h2 {
+  color: rgb(19, 18, 18);
+  text-align: center;
+  padding-top: 50px;
+  font-family: "Itim", cursive;
+}
+
+.login-content-wrapper img {
+  width: 100%;
+}
+
+.login-content-wrapper input {
+  border: 2px solid lightgray;
+  background: transparent;
+  color: rgb(15, 15, 15);
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.login-content-wrapper input:focus {
+  border: 2px solid #ff5200 !important;
+}
+.login-content-wrapper input:nth-child(1) {
+  margin-top: 60px;
+}
+
+.login-content-wrapper input:focus {
+  border: 1px solid #ff5200;
+}
+
+.login-content button {
+  background: #ff5200;
+  border: none;
+  outline: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  transition: all 0.2s ease-in-out;
+}
+
+.login-content button:hover {
+  background: #ff5200;
+}
+.login-content-wrapper p {
+  color: rgb(216, 45, 45);
+  font-weight: bold;
+  font-size: 17px;
+}
+.login-content-wrapper a {
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: block;
+  color: #ff5200;
+}
+
+.loginSignUp a {
+  text-decoration: none;
+  margin: 20px;
+  border: 1px solid #ff5200;
+  padding: 10px 30px;
+  border-radius: 5px;
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
+}
+.loginSignUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.or-wrapper {
+  position: relative;
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.or-wrapper::before {
+  content: "";
+  height: 1px;
+  width: 48%;
+  background: #ff5200;
+  position: absolute;
+  left: 0;
+  top: 13px;
+  text-align: center;
+}
+
+.or-wrapper::after {
+  content: "";
+  height: 1px;
+  width: 48%;
+  background: #ff5200;
+  position: absolute;
+  right: 0px;
+  top: 13px;
+}
+
+.continue-with-btns {
+  display: flex;
+  gap: 10px;
+}
+.continue-with-btns button {
+  border-radius: 50px;
+  background: transparent;
+  border: 1px solid #ff5200;
+  color: black;
+}
+.continue-with-btns button:hover {
+  color: white;
+}
+@media screen and (max-width: 1202px) {
+  .continue-with-btns button {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .continue-with-btns {
+    display: block;
+    flex-direction: column;
+  }
+}

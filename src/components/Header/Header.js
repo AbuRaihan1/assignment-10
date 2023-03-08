@@ -31,6 +31,7 @@ const Header = () => {
           >
             Faq
           </NavLink>
+          <button className="login_btn">login</button>
         </div>
       </nav>
     </div>

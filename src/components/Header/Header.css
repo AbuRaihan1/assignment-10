@@ -16,18 +16,27 @@
   color: #ff5200;
 }
 
-@media screen and (max-width:500px){
+.login_btn {
+  outline: none;
+  border: none;
+  background: #ff5200;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 6px 20px;
+}
+@media screen and (max-width: 500px) {
   .navbar {
-    padding:  10px !important;
+    padding: 10px !important;
   }
   .nav-logo {
     font-size: 20px;
   }
 }
 
-@media screen and (max-width:377px){
+@media screen and (max-width: 377px) {
   .navbar {
-    padding:10px  5px !important;
+    padding: 10px 5px !important;
   }
   .nav-logo {
     font-size: 20px;
