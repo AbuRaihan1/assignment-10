@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import registerImage from "../../assets/images/signUp.png";
+import { AuthContext } from "../../contexts/AuthContext";
 const register = () => {
+  // const {createUser} = useContext(AuthContext);
+
+  const registerHandler = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    console.log(name, email);
+  };
   return (
     <div className="login">
       <div className="login-content">
@@ -16,7 +26,7 @@ const register = () => {
         <Container>
           <Row>
             <Col md="6">
-              <form>
+              <form onSubmit={registerHandler}>
                 <div className="login-content-wrapper">
                   <div className="login-area">
                     <input

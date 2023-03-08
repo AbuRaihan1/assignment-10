@@ -20,10 +20,10 @@
   outline: none;
   border: none;
   background: #ff5200;
-  color: white;
+  color: white !important;
   font-weight: bold;
   border-radius: 5px;
-  padding: 6px 20px;
+  padding: 6px 20px !important;
 }
 @media screen and (max-width: 500px) {
   .navbar {

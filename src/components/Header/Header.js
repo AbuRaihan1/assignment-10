@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 const Header = () => {
   return (
@@ -31,7 +31,7 @@ const Header = () => {
           >
             Faq
           </NavLink>
-          <button className="login_btn">login</button>
+          <Link to="/login" className="login_btn">login</Link>
         </div>
       </nav>
     </div>
