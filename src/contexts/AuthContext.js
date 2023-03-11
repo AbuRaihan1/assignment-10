@@ -4,8 +4,10 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
+import Swal from "sweetalert2";
 export const AuthContext = createContext();
 const auth = getAuth(app);
 export const UserContext = ({ children }) => {
@@ -29,10 +31,17 @@ export const UserContext = ({ children }) => {
         console.log(error);
       });
   };
+
+  // forgot password
+  const forgotPassword = (email) => {
+  return  sendPasswordResetEmail(auth, email)
+      
+  };
   const authInfo = {
     createUser,
     login,
     updateUserName,
+    forgotPassword,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import registerImage from "../../assets/images/signUp.png";
 import { AuthContext } from "../../contexts/AuthContext";
 const Register = () => {
+  const navigate = useNavigate()
   const { createUser, updateUserName } = useContext(AuthContext);
+  const [error, setEror] = useState("");
   const registerHandler = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -14,10 +16,10 @@ const Register = () => {
 
     createUser(email, password)
       .then((res) => {
-        console.log(res.user);
+        navigate('/')
       })
       .catch((error) => {
-        console.log(error);
+        setEror(error.message);
       });
 
     updateUserName(name);
@@ -45,12 +47,6 @@ const Register = () => {
                       required
                     />
                     <input
-                      type="text"
-                      placeholder="Photo url"
-                      name="photoUrl"
-                      required
-                    />
-                    <input
                       type="email"
                       placeholder="Your email"
                       name="email"
@@ -62,7 +58,7 @@ const Register = () => {
                       name="password"
                       required
                     />{" "}
-                    <p>error</p>
+                    <p>{error}</p>
                     <button>Register</button>
                     <div className="or-wrapper">or</div>
                   </div>

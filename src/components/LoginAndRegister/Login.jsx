@@ -1,13 +1,15 @@
 import React, { useContext, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import loginImage from "../../assets/images/login.png";
 import { AuthContext } from "../../contexts/AuthContext";
 import "./login.css";
 const Login = () => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
-  const { login } = useContext(AuthContext);
+  const [userEmail, setUserEmail] = useState();
+  const { login, forgotPassword } = useContext(AuthContext);
   const loginHandler = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -17,6 +19,19 @@ const Login = () => {
       .then((res) => {
         console.log(res.user);
         navigate("/");
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+      });
+  };
+  const resetPasswordHandle = () => {
+    forgotPassword(userEmail)
+      .then((res) => {
+        Swal.fire(
+          "Reset password",
+          "Check your email, for reset your password",
+          "info"
+        );
       })
       .catch((error) => {
         setErrorMessage(error.message);
@@ -42,6 +57,7 @@ const Login = () => {
                     placeholder="email"
                     name="email"
                     required
+                    onBlur={(e) => setUserEmail(e.target.value)}
                   />
                   <input
                     type="password"
@@ -50,7 +66,9 @@ const Login = () => {
                     required
                   />{" "}
                   <p>{errorMessage}</p>
-                  <Link to="#">Forget password?</Link>
+                  <Link to="#" onClick={resetPasswordHandle}>
+                    Forget password?
+                  </Link>
                   <button>Log in </button>
                   <div className="or-wrapper">or</div>
                   <div className="continue-with-btns">
