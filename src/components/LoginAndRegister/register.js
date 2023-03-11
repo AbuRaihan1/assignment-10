@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import registerImage from "../../assets/images/signUp.png";
 import { AuthContext } from "../../contexts/AuthContext";
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserName } = useContext(AuthContext);
   const registerHandler = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -19,6 +19,8 @@ const Register = () => {
       .catch((error) => {
         console.log(error);
       });
+
+    updateUserName(name);
   };
   return (
     <div className="login">
@@ -40,6 +42,12 @@ const Register = () => {
                       type="text"
                       placeholder="Your name"
                       name="name"
+                      required
+                    />
+                    <input
+                      type="text"
+                      placeholder="Photo url"
+                      name="photoUrl"
                       required
                     />
                     <input

@@ -15,11 +15,24 @@ export const UserContext = ({ children }) => {
   const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
-  
+
+  // update user name
+  const updateUserName = (name) => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+    })
+      .then(() => {
+        // Profile updated!
+        // ...
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const authInfo = {
     createUser,
     login,
-    // updateUserName,
+    updateUserName,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
