@@ -3,15 +3,22 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import registerImage from "../../assets/images/signUp.png";
 import { AuthContext } from "../../contexts/AuthContext";
-const register = () => {
-  // const {createUser} = useContext(AuthContext);
-
+const Register = () => {
+  const { createUser } = useContext(AuthContext);
   const registerHandler = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
-    console.log(name, email);
+    const password = form.password.value;
+
+    createUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="login">
@@ -70,4 +77,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default Register;

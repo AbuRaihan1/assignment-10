@@ -5,7 +5,7 @@ import Faq from "../components/Faq/Faq";
 import Blog from "../components/Blog/Blog";
 import Home from "../components/Home/Home";
 import Login from "../components/LoginAndRegister/Login";
-import Register from "../components/LoginAndRegister/register";
+import Register from "../components/LoginAndRegister/Register";
 const router = createBrowserRouter([
   {
     path: "/",
