@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import registerImage from "../../assets/images/signUp.png";
 import { AuthContext } from "../../contexts/AuthContext";
 const Register = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { createUser, updateUserName } = useContext(AuthContext);
   const [error, setEror] = useState("");
   const registerHandler = (e) => {
@@ -16,13 +17,13 @@ const Register = () => {
 
     createUser(email, password)
       .then((res) => {
-        navigate('/')
+        Swal.fire("Congrats", "you are registerd now", "success");
+        updateUserName(name);
+        navigate("/");
       })
       .catch((error) => {
         setEror(error.message);
       });
-
-    updateUserName(name);
   };
   return (
     <div className="login">

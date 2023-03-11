@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 import "./Header.css";
 const Header = () => {
+  const { user, logout } = useContext(AuthContext);
+
   return (
     <div>
       <nav className="navbar">
@@ -31,7 +34,27 @@ const Header = () => {
           >
             Faq
           </NavLink>
-          <Link to="/login" className="login_btn">login</Link>
+          {user?.uid ? (
+            <>
+              <NavLink
+                style={{
+                  border: "1px solid lightgray",
+                  borderRadius: "5px",
+                  marginRight: "5px",
+                }}
+              >
+                {" "}
+                welcome, {user?.displayName}
+              </NavLink>
+              <Link to="#" className="login_btn" onClick={logout}>
+                Logout
+              </Link>
+            </>
+          ) : (
+            <Link to="/login" className="login_btn">
+              login
+            </Link>
+          )}
         </div>
       </nav>
     </div>
