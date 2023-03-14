@@ -1,0 +1,7 @@
+.course_card {
+    border: 1px solid lightgray;
+    margin: 10px;
+}
+.course_card img {
+    width: 100%;
+}
