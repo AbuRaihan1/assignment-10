@@ -6,6 +6,7 @@ import Blog from "../components/Blog/Blog";
 import Home from "../components/Home/Home";
 import Login from "../components/LoginAndRegister/Login";
 import Register from "../components/LoginAndRegister/Register";
+import CourseDetails from "../components/Courses/CourseDetails";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,6 +39,13 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "courses/:coursesId",
+        element: <CourseDetails />,
+        loader: async ({ params }) => {
+          return fetch(`http://localhost:5000/courses/${params.coursesId}`);
+        },
       },
     ],
   },

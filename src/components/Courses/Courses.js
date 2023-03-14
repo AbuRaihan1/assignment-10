@@ -6,7 +6,7 @@ const Courses = () => {
   useEffect(() => {
     fetch("http://localhost:5000/courses")
       .then((res) => res.json())
-      .then((data) => setCourseData(data.courses));
+      .then((data) => setCourseData(data));
   }, []);
 
   return (

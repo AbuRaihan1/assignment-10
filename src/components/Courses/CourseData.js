@@ -1,8 +1,10 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import './Courses.css'
+import { Link } from "react-router-dom";
+import "./Courses.css";
 const CourseData = ({ course }) => {
-  const { image, isbn13, price, subtitle, title } = course;
+  const { image, id, price, subtitle, title } = course;
+
   return (
     <>
       <Container>
@@ -13,6 +15,9 @@ const CourseData = ({ course }) => {
               <h2>{title}</h2>
               <p>{subtitle}</p>
               <h4>{price}</h4>
+              <Link to={`/courses/${id}`}>
+                <button>Get started</button>
+              </Link>
             </div>
           </Col>
         </Row>
